@@ -1,0 +1,245 @@
+/* ******************************************************************** */
+/* Structure of css file follows the structure of JobTracker.jsx file      */
+/* Common selectors like logout button is present in App.jsx file       */
+/* ******************************************************************** */
+
+.sort-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.sort-ascending, .sort-descending, .sort-reset, .job__complete, .delete-button {
+  padding: 0.5rem;
+  width: 8rem;
+  background-color: #f8ceec;
+  background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+  border: 1px solid #f8ceec;
+
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sort-descending, .sort-reset {
+  margin-left: 1rem;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  justify-content: space-around;
+
+  padding-top: 2rem;
+  padding-left: 0;
+}
+
+.card {
+  grid-column: span 12;
+
+  padding: 1rem;
+  border: 2px solid #a88beb;
+  border-radius: 1rem;
+
+  list-style-type: none;
+}
+  
+.card:hover, .card:focus, .card:focus-within { 
+  background-color: #a88beb;
+  color: white;
+  text-decoration-color: white;
+}
+
+.job-details {
+  padding: 0;
+  list-style-type: none;
+}
+
+.job-title {
+  font-size: large;
+  font-weight: bold;
+}
+
+.job-text-done { 
+  display: flex;
+  justify-content: flex-end;
+}
+
+.job-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.job-complete, .add-button {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 8rem;
+  background-color: var(--header-footer-background-color);
+  background-image: linear-gradient(315deg, var(--header-footer-background-color) 0%, var(--header-footer-background-overlap-color) 74%);
+  border: 1px solid var(--header-footer-background-color);
+
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.job-complete, .delete-button {
+  margin-top: 2rem;
+}
+
+.card:focus .job-complete,
+.card:focus-within .job-complete,
+.card:hover .job-complete { 
+  display: inline-block;
+}
+
+.job-delete:hover { 
+  border: 1px solid white;
+  background-color: #f8ceec;
+}
+
+.delete {
+  margin: 0;
+  padding: 0;
+}
+
+.delete-button {
+  margin-left: 1rem;
+  background-color: lightcoral;
+  background-image: none;
+}
+
+#overlay {
+  position: fixed;
+ 
+  width: 100%;
+  height: 100%;
+  top: 10;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+
+  cursor: pointer;
+}
+
+#overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 1rem;
+  width: 50%;
+  background-color: white;
+  border: 3px solid #a88beb;
+
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+
+  transform: translate(-50%,-50%);
+}
+
+.close-overlay {
+  align-self: flex-end;
+  border: none;
+  background: transparent;
+}
+
+.cancel {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 8rem;
+  background-color: #f8ceec;
+  background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel:hover { 
+  border: 1px solid white;
+  background-color: #f8ceec;
+}
+
+.job-delete { 
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 8rem;
+  background-color: lightcoral;
+  border: none;
+
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card:focus .job-delete,
+.card:focus-within .job-delete,
+.card:hover .job-delete { 
+  display: inline-block;
+}
+
+.job-delete:hover { 
+  border: 1px solid white;
+  background-color: crimson;
+}
+
+.add, .delete-form {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.field {
+  padding: 0;
+  margin: 0;
+  flex-shrink: 2;
+}
+
+.new-job, .new-company, .new-follow-up {
+  width: 80%;
+  padding: 0.25rem;
+  margin: 0.5rem 0;
+  border-radius: 0.2rem;
+
+  box-sizing: border-box;
+}
+
+.new-job:focus, .new-company:focus, .new-follow-up:focus {
+  background-color: var(--hover-color);
+  color: white;
+}
+
+.form-error {
+  margin-bottom: 0.5rem;
+
+  color: red;
+  font-style: italic;
+  font-weight: 600;
+}
+
+@media(min-width: 750px) {
+  .card {
+    grid-column: span 6;
+  }
+}
+
+@media(min-width: 1065px) {  
+  .card {
+    grid-column: span 4;
+  }
+}

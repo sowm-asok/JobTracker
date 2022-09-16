@@ -1,0 +1,27 @@
+/* ******************************************************************** */
+/* Structure of css file follows the structure of Completed.jsx file      */
+/* Common selectors of TodosList is present in TodosList.css file       */
+/* ******************************************************************** */
+
+.main-completed {
+  justify-content: center;
+
+  padding: 0 3rem 3rem 3rem;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+}
+
+.job-text-done { 
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-actions {
+  display: inline-flex;
+  align-items: center;
+}
+
+.delete-actions button {
+  margin-right: 1rem;
+} 

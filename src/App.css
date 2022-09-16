@@ -1,0 +1,276 @@
+/* ******************************************************************** */
+/* Structure of css file follows the structure of the App.jsx           */
+/* Mobile first responsive design is used followed by media queries     */
+/* to allow the site to work on desktop dimensions                      */
+/* ******************************************************************** */
+
+/* ***************************** */
+/* CSS variables used in styling */
+/* ***************************** */
+
+body {
+  --hover-color: #5F3694;
+  --header-footer-background-color: #f8ceec;
+  --header-footer-background-overlap-color: #a88beb;
+  --link-text-color: white;
+  --main-content-color: white;
+}
+
+/* ****************************************************************** */
+/* Structure of css file follows the structure of the App.jsx page    */
+/* ****************************************************************** */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Raleway&display=swap');
+
+* {
+  box-sizing: border-box;
+
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body { 
+  padding: 1rem;
+  min-height: 100vh; 
+  margin: 0;
+
+  background-color: var(--header-footer-background-color);
+  background-image: linear-gradient(315deg, var(--header-footer-background-color) 0%, var(--header-footer-background-overlap-color) 74%);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0.25rem;
+  margin: 0;
+
+  background-color: var(--main-content-color);
+  box-shadow: 3px 3px 3px var(--main-content-color);
+
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.6px;
+  align-items: center;
+  cursor: pointer;
+}
+
+#loading {
+  display: inline-block;
+
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: var(--header-footer-background-overlap-color);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.6px;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #loading {
+    animation: spin 5s ease-in-out infinite;
+  }
+}
+
+.error {
+  margin-top: 2rem;
+
+  color: red;
+  font-style: italic;
+  font-weight: 600;
+}
+
+@keyframes fadeIn { 
+  from { 
+    opacity: 0;
+  }
+  to { 
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .error {
+    animation: fadeIn linear 2s;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction:column;
+
+  margin: 0;
+
+  align-items: center;
+}
+
+.required {
+  margin-right: 0.5rem;
+
+  font-size: 5vh;
+  color: red;
+}
+
+.username-field {
+  display: flex;
+  flex-direction: row;
+  
+  padding: 0.25rem;
+
+  align-items: baseline;
+}
+
+.login-username-label {
+  margin-right: 1rem;
+}
+
+.login-username {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+
+  color: white;
+}
+
+.login-username:focus {
+  background-color: var(--hover-color);
+}
+
+.login-button, .logout-button {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  width: 8rem;  
+  background-color: var(--header-footer-background-color);
+  background-image: linear-gradient(315deg, var(--header-footer-background-color) 0%, var(--header-footer-background-overlap-color) 74%);
+  border: none;
+
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header {
+  margin: 0;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  width: 100%;
+}
+
+.logout {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  background-color: #f8ceec;
+  background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+  
+  color: white;
+  font-size: 1rem;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:hover, .footer a:focus {
+  padding-left: 0.2rem;
+  background-color: var(--hover-color);
+  
+  color: var(--link-text-color);
+  font-weight: bold;
+}
+
+/* ************** */
+/* Tablet sizing  */
+/* ************** */
+
+@media (min-width: 450px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1rem;
+  }
+
+  .header {
+    display: flex;
+  }
+
+  .footer {
+    padding: 0.75rem;
+  }
+
+  .footer a {
+    padding: 0.2rem;
+    padding-left: 0;
+  }
+
+  .footer a:hover, .footer a:focus {
+    padding-left: 0.2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+}
+
+/* ************** */
+/* Desktop sizing */
+/* ************** */
+
+@media (min-width: 600px) {
+  .app {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header" "main" "footer";
+    letter-spacing: 0.5px;
+
+    font-size: 1.2rem;
+  }
+
+  .header {
+    grid-area: header;
+    display: flex;
+  }
+
+  .main-about {
+    grid-area: main;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+
+  .footer a {
+    padding: 0.5rem;
+    padding-left: 0;
+  }
+}

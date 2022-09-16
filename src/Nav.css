@@ -1,0 +1,141 @@
+/* ******************************************************************** */
+/* Structure of css file follows the structure of the Nav.jsx           */
+/* Mobile first responsive design is used followed by media queries     */
+/* to allow the site to work on desktop dimensions                      */
+/* ******************************************************************** */
+
+.main-jobs {
+  justify-content: center;
+
+  padding: 0 3rem 3rem 3rem;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+}
+
+.menubar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1; 
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 15%;
+  z-index: 10;
+  line-height: 3;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  align-items: stretch;
+}
+
+.menu {
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-around;
+  
+  top: 3rem;
+  left: -100%;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f8ceec;
+  background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+
+  text-align: center;
+  align-items: stretch;
+  list-style-type: none;
+}
+
+.menu .active {
+  background-color: var(--hover-color);
+}
+
+.menu li {
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+
+  text-align: center;
+}
+
+.menu a {
+  display: inline-block;
+
+  padding: 1rem;
+
+  color: white;
+}
+
+.menu li a:hover, .menu li a:active, .menu li a:focus {
+  background-color: var(--hover-color);
+
+  color: var(--link-text-color);
+}
+
+/* ************** */
+/* Tablet sizing  */
+/* ************** */
+
+@media (min-width: 450px) {
+  .menubar {
+    display: inline-flex;
+
+    background-color: none;
+
+    font-size: 1rem;
+  }
+
+  .menubar-logo {
+    padding: 0.75rem;
+  }
+
+  .menu {
+    position: initial;
+    flex-direction: row;
+
+    top: 0;
+    left: 0;
+  }
+
+  .menu li {
+    display: inline-flex;
+  }
+
+  .menu a {
+    padding: 0.75rem;
+  }
+}
+
+/* ************** */
+/* Desktop sizing */
+/* ************** */
+
+@media (min-width: 600px) {
+  .menubar {
+    display: flex;
+    flex-direction: column;
+
+    background-color: none;
+
+    font-size: 1.2rem;
+  }
+
+  .menu {
+    position: initial;
+    flex-direction: row;
+    left: 0;
+    top: 0;
+  }
+
+  .menu li {
+    display: inline-flex;
+  }
+
+  .menu a {
+    padding: 1rem;
+  }
+}

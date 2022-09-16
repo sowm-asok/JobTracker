@@ -1,0 +1,25 @@
+/* ******************************************************************** */
+/* Structure of css file follows the structure of Privacy.jsx file      */
+/* Common selectors like logout button is present in App.jsx file       */
+/* ******************************************************************** */
+.main-home {
+  justify-content: center;
+
+  padding: 0 3rem 3rem 3rem;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+}
+
+.main-home h3 {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.main-home p {
+  font-size: 1.2rem;
+  font-style: oblique;
+  text-align: center;
+}
